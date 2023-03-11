@@ -121,6 +121,14 @@ public class xUnitFeaturesTest
             }
         }
 
+        [Theory]
+        [MemberData(nameof(ExternalData.imranTestData), MemberType=typeof(ExternalData))]
+        public void Is_a_string(string value)
+        {
+            //Assert.NotEqual("zooby", value);
+            Assert.IsType<string>(value);
+        }
+
         public class ExternalData
         {
             public static IEnumerable<object[]> GetData(int start) => new[]
@@ -136,6 +144,13 @@ public class xUnitFeaturesTest
                     { 40, 50, false },
                     { 50, 50, true },
                 };
+
+            public static TheoryData<string> imranTestData => new()
+            {
+                { "foo" },
+                { "" },
+                { "baz2352453454545" }
+            };
         }
     }
 

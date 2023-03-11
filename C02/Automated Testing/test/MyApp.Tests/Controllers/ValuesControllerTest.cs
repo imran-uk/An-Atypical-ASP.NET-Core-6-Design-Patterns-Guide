@@ -20,6 +20,8 @@ public class ValuesControllerTest
                 x => Assert.Equal("value1", x),
                 x => Assert.Equal("value2", x)
             );
+
+            Assert.IsType<string[]>(result.Value);
         }
     }
 }
