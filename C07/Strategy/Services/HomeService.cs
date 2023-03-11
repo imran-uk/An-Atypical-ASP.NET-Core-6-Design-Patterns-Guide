@@ -16,3 +16,14 @@ public class HomeService : IHomeService
         yield return "amet";
     }
 }
+
+public class FanService : IHomeService
+{
+    public IEnumerable<string> GetHomePageData()
+    {
+        yield return "22";
+        yield return "3306";
+        yield return "443";
+        yield return "80";
+    }
+}
