@@ -1,6 +1,10 @@
 
 # Created by https://www.gitignore.io/api/visualstudio,visualstudiocode
 
+## imran
+An.Atypical.ASP.NET.Core.6.Design.Patterns.Guide.2nd.Edition.Zebdi.Marcotte.Packt.9781803249841.EBooksWorld.ir.pdf
+.DS_Store
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json

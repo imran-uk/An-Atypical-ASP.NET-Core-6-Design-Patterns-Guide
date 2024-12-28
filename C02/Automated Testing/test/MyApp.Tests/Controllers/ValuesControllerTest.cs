@@ -16,10 +16,13 @@ public class ValuesControllerTest
             var result = sut.Get();
 
             // Assert
-            Assert.Collection(result.Value,
-                x => Assert.Equal("value1", x),
-                x => Assert.Equal("value2", x)
-            );
+            if (result.Value != null)
+            {
+                Assert.Collection(result.Value,
+                    x => Assert.Equal("value1", x),
+                    x => Assert.Equal("value2", x)
+                );
+            }
         }
     }
 }

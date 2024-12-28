@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections;
 using Xunit;
 
 namespace MyApp;
 
-public class xUnitFeaturesTest
+public class XUnitFeaturesTest
 {
     public class FactTest
     {
@@ -36,10 +33,10 @@ public class xUnitFeaturesTest
         [Fact]
         public void Exploring_xUnit_assertions()
         {
-            object obj1 = new MyClass { Name = "Object 1" };
-            object obj2 = new MyClass { Name = "Object 1" };
-            object obj3 = obj1;
-            object? obj4 = default(MyClass);
+            var obj1 = new MyClass { Name = "Object 1" };
+            var obj2 = new MyClass { Name = "Object 1" };
+            var obj3 = obj1;
+            var obj4 = default(MyClass);
 
             Assert.Equal(expected: 2, actual: 2);
             Assert.NotEqual(expected: 2, actual: 1);
@@ -65,7 +62,7 @@ public class xUnitFeaturesTest
             }
         }
 
-        private record class MyClass
+        private record MyClass
         {
             public string? Name { get; set; }
         }
@@ -108,7 +105,7 @@ public class xUnitFeaturesTest
         [MemberData(nameof(Data))]
         [MemberData(nameof(TypedData))]
         [MemberData(nameof(ExternalData.GetData), 10, MemberType = typeof(ExternalData))]
-        [MemberData(nameof(ExternalData.TypedData), MemberType = typeof(ExternalData))]
+        [MemberData(nameof(ExternalData.TypedDataTens), MemberType = typeof(ExternalData))]
         public void Should_be_equal(int value1, int value2, bool shouldBeEqual)
         {
             if (shouldBeEqual)
@@ -130,7 +127,7 @@ public class xUnitFeaturesTest
                     new object[] { start + 1, start + 1, true },
                 };
 
-            public static TheoryData<int, int, bool> TypedData => new()
+            public static TheoryData<int, int, bool> TypedDataTens => new()
                 {
                     { 20, 30, false },
                     { 40, 50, false },
