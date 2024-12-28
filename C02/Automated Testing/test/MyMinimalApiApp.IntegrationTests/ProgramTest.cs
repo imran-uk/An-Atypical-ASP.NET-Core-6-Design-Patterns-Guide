@@ -1,10 +1,8 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace MyMinimalApiApp;
+namespace MyMinimalApiApp.IntegrationTests;
 
 public class ProgramTest : IClassFixture<WebApplicationFactory<Program>>
 {
